@@ -25,13 +25,10 @@ cron.schedule('0 5,13 * * *', async () => {
   });
 
   app.get("/", (req, res)=>{
-    console.log("GET / called ")
     return res.status(200).json({ok: true})
   })
 
 app.post('/notify', async (req, res) => {
-    console.log("POST /notify called ")
-    console.log("req.body > ", req.body)
     let message = req.body.Body;
     let senderID = req.body.From;
     let sendMesssage = "Quem é você?"

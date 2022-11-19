@@ -1,7 +1,7 @@
 {
-  "name": "test-project",
+  "name": "linus-walk-alert",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Notification app that alerts, via whatsapp messages, of impending rain.",
   "main": "index.js",
   "type": "module",
   "scripts": {

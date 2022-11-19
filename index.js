@@ -31,10 +31,10 @@ cron.schedule('0 5,13 * * *', async () => {
 app.post('/notify', async (req, res) => {
     let message = req.body.Body;
     let senderID = req.body.From;
-    let sendMesssage = "Quem é você?"
-    const data = await getWeatherForecast()
-    if(message.trim().toLowerCase() === "amore"){
-        sendMesssage = "My Love." + " " + data
+    let sendMesssage = process.env.DEFAULT_REPLY
+    if(message.trim().toLowerCase() === process.env.INCOMMING_MESSAGE_KEYWORD){
+        const data = await getWeatherForecast()
+        sendMesssage = process.env.SALUTAION_PHRASE + " " + data
     }
     await sendMessage(sendMesssage, senderID);
 })

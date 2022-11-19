@@ -12,7 +12,7 @@ const sendMessage = async (message, senderID) => {
         await client.messages.create({
             to: senderID,
             body: message,
-            from: `whatsapp:+14155238886`
+            from: process.env.SENDER
         });
     } catch (error) {
         console.log(`Error at sendMessage --> ${error}`);

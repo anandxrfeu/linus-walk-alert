@@ -1,6 +1,5 @@
 import axios from "axios";
 import moment from 'moment';  
-import data from "./data.js";
 
 const weatherApiToken = process.env.OPEN_WEATHER_MAP_API_TOKEN
 const lat = process.env.HOME_LATITUDE

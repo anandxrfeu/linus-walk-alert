@@ -36,6 +36,20 @@ cron.schedule('* * * * *', async () => {
     return res.status(200).json({ok: true})
   })
 
+app.post("/schedule", async (req, res)=>{
+  console.log("API Scheduler activated!")
+    const isClear = await isClearWeather()
+    if(!isClear){
+        console.log("Weather is NOT clear!!")
+        const data = await getWeatherForecast()
+        await sendMessage(data, process.env.REC1PIENT_1);
+        await sendMessage(data, process.env.REC1PIENT_2);
+    }else{
+        console.log("Weather is clear!!")
+    }
+    return
+})
+
 app.post('/notify', async (req, res) => {
     let message = req.body.Body;
     let senderID = req.body.From;

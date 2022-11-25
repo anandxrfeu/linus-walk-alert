@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
+//cron.schedule('0 5,13 * * *', async () => {
 
-cron.schedule('0 5,13 * * *', async () => {
+cron.schedule('* * * * *', async () => {
     console.log("Scheduler activated!!")
     const isClear = await isClearWeather()
     if(!isClear){

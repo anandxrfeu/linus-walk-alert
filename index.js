@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 
 //cron.schedule('0 5,13 * * *', async () => {
 
-cron.schedule('0 6,19 * * *', async () => {
-    console.log("Scheduler activated!!")
+cron.schedule('0 5,13 * * *', async () => {
+  console.log("Scheduler activated!!")
     const isClear = await isClearWeather()
     if(!isClear){
         console.log("Weather is NOT clear!!")
@@ -47,7 +47,7 @@ app.post("/schedule", async (req, res)=>{
     }else{
         console.log("Weather is clear!!")
     }
-    return
+    return res.status(200).json() 
 })
 
 app.post('/notify', async (req, res) => {

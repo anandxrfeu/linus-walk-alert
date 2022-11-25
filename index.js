@@ -10,9 +10,13 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+
 cron.schedule('0 5,13 * * *', async () => {
+    console.log("Scheduler activated!!")
     const isClear = await isClearWeather()
     if(!isClear){
+        console.log("Weather is NOT clear!!")
         const data = await getWeatherForecast()
         await sendMessage(data, process.env.REC1PIENT_1);
         await sendMessage(data, process.env.REC1PIENT_2);
@@ -23,6 +27,9 @@ cron.schedule('0 5,13 * * *', async () => {
     scheduled: true,
     timezone: "America/Sao_Paulo"
   });
+
+
+
 
   app.get("/", (req, res)=>{
     return res.status(200).json({ok: true})

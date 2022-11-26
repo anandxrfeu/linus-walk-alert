@@ -76,7 +76,7 @@ I wanted to build a low cost project. These are my lessons learnt while building
 
 <!-- LIMITATIONS -->
 ## Limitations
-* The Twilio whatsapp sandbox gives a shared number thtat sends notifications. Any reciepient that wants to get the notification, needs to register to this number by sending a codded message. This registration resets every 72 hours. 
+* The Twilio whatsapp sandbox gives a shared number thtat sends notifications. Any reciepient that wants to get the notification, needs to register to this number by sending a codded message. This registration resets every 72 hours. As a workaround, I have I use shortcuts app on iphone to send resgistration message daily in an automated fashion. 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

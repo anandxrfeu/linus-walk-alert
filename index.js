@@ -13,6 +13,10 @@ app.use(express.urlencoded({ extended: false }));
 
 //cron.schedule('0 5,13 * * *', async () => {
 
+/**
+ * The cron job is commented as the schedule responsibility is being handled by cyclic.sh
+ * 
+ 
 cron.schedule('0 5,13 * * *', async () => {
   console.log("Scheduler activated!!")
     const isClear = await isClearWeather()
@@ -28,13 +32,17 @@ cron.schedule('0 5,13 * * *', async () => {
     scheduled: true,
     timezone: "America/Sao_Paulo"
   });
-
+ */
 
 
 
   app.get("/", (req, res)=>{
     return res.status(200).json({ok: true})
   })
+
+/**
+ * Schedule.sh calls this end point
+ */
 
 app.post("/schedule", async (req, res)=>{
   console.log("API Scheduler activated!")
